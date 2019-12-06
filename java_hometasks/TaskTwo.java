@@ -8,7 +8,8 @@ public class TaskTwo {
    * in array like [1,0,..,1,1,0]
    * return changed array
    */
-  private byte[] InvertArrayElements(byte[] arr) {
+  private byte[] InvertArrayElements(byte[] ar) {
+    byte[] arr = ar.clone(); // just to save base array
     for (int i = 0; i < arr.length; i++) {
       switch (arr[i]) {
         case 1:
@@ -23,6 +24,8 @@ public class TaskTwo {
   }
   /*
    */
+  private void InvertArrayElements() {}
+
   // Execute task two
   // return nothing
   public static void Execute() {
