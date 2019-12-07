@@ -1,6 +1,7 @@
 package java_hometasks;
 
 import java_hometasks.TaskTwo;
+import java.util.Arrays;
 
 public class TaskTwo {
 
@@ -50,9 +51,24 @@ public class TaskTwo {
       i++;
     }
     System.out.println("\nArray of 8 elements n*3");
-    // print inverted array
     for (int b : arr) {
       System.out.print(b + " ");
     }
+    // subtask 3
+    byte[] c = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8,9,1};
+    System.out.println("\nBase array:");
+    System.out.println(Arrays.toString(c));
+    for (int j=0;j<c.length;j++){if (c[j]<6) c[j]*=2;}
+    System.out.println("\nArray n*2 where n<6");
+    System.out.println(Arrays.toString(c));
+    byte [][] d =new byte[10][10];
+    System.out.println("\nSquare array 10x10");
+    for (int j = 0; j < 10; j++) {
+      for (int k = 0; k < 10; k++) {
+        if (j==k) d[j][k]=1;
+      }
+    }
+    for (byte [] b : d){
+    System.out.println(Arrays.toString(b));}
   }
 }
