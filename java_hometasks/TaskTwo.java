@@ -23,16 +23,28 @@ public class TaskTwo {
     }
     return arr;
   }
-  /*
+  /*Find min element of arra
+  *return min
    */
-  private void InvertArrayElements() {}
-
-  // Execute task two
-  // return nothing
-  public static void Execute() {
+  private byte Min(byte [] ar) {
+    byte min=ar[0];
+    for (byte b : ar){if(b<min) min=b;}
+    return min;
+  }
+/*Find max element of arra
+  *return min
+   */
+  private byte Max(byte [] ar) {
+    byte max=ar[0];
+    for (byte b : ar){if(b>max) max=b;}
+    return max;
+    }
+  //Execute task two
+  //return nothing
+  public static void Execute()  {
     TaskTwo TaskObject = new TaskTwo();
     // subtask 1
-    byte[] a = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
+    byte [] a = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
     // print base array
     System.out.println("Base array:");
     for (byte b : a) {
@@ -70,8 +82,11 @@ public class TaskTwo {
         if (j==k || k==(n-j-1)) d[k][j]=1;
       }
     }
-    for (byte [] b : d){
-    System.out.println(Arrays.toString(b));}
-    //
+    for (byte [] b : d){System.out.println(Arrays.toString(b));}
+    //subtask 5
+    System.out.println("\nMin of array: \n" +
+    (Arrays.toString(c)) + "\nequals: " +  TaskObject.Min(c));
+    System.out.println("Max of array equals: " +  TaskObject.Max(c));
   }
+  //subtask 6
 }
