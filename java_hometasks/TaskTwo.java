@@ -35,12 +35,24 @@ public class TaskTwo {
     // print base array
     System.out.println("Base array:");
     for (byte b : a) {
-      System.out.print(b + "");
+      System.out.print(b + " ");
     }
     System.out.println("\nInverted array: ");
     // print inverted array
     for (byte b : TaskObject.InvertArrayElements(a)) {
-      System.out.print(b + "");
+      System.out.print(b + " ");
+    }
+    // subtask 2
+    int[] arr = new int[8];
+    int i = 0;
+    while (i < arr.length) {
+      arr[i] = i * 3;
+      i++;
+    }
+    System.out.println("\nArray of 8 elements n*3");
+    // print inverted array
+    for (int b : arr) {
+      System.out.print(b + " ");
     }
   }
 }
