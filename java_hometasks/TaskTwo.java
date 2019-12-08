@@ -1,7 +1,7 @@
 package java_hometasks;
 
-import java_hometasks.TaskTwo;
 import java.util.Arrays;
+import java_hometasks.TaskTwoHard;
 
 public class TaskTwo {
 
@@ -23,7 +23,7 @@ public class TaskTwo {
     }
     return arr;
   }
-  /*Find min element of arra
+  /*Find min element of array
   *return min
    */
   private byte Min(byte [] ar) {
@@ -31,7 +31,7 @@ public class TaskTwo {
     for (byte b : ar){if(b<min) min=b;}
     return min;
   }
-/*Find max element of arra
+/*Find max element of array
   *return min
    */
   private byte Max(byte [] ar) {
@@ -43,8 +43,10 @@ public class TaskTwo {
   //return nothing
   public static void Execute()  {
     TaskTwo TaskObject = new TaskTwo();
+   
     // subtask 1
-    byte [] a = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
+    byte [] a = {1, 1, 0, 0, 1, 0, 1, 1, 0, 1};
+    
     // print base array
     System.out.println("Base array:");
     for (byte b : a) {
@@ -62,17 +64,15 @@ public class TaskTwo {
       arr[i] = i * 3;
       i++;
     }
-    System.out.println("\nArray of 8 elements n*3");
-    for (int b : arr) {
-      System.out.print(b + " ");
+    System.out.println("\n\nArray of 8 elements n*3");
+    for (int b : arr) { System.out.print(b + " ");
     }
     // subtask 3
     byte[] c = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8,9,1};
     System.out.println("\n\nBase array:");
-    System.out.println(Arrays.toString(c));
+   System.out.println(Arrays.toString(c));
     for (int j=0;j<c.length;j++){if (c[j]<6) c[j]*=2;}
-    System.out.println("Array n*2 where n<6");
-    System.out.println(Arrays.toString(c));
+    System.out.println("Array n*2 where n<6\n" + Arrays.toString(c));
     //subtask 4
     int n=7;
     byte [][] d =new byte[n][n];
@@ -87,6 +87,7 @@ public class TaskTwo {
     System.out.println("\nMin of array: \n" +
     (Arrays.toString(c)) + "\nequals: " +  TaskObject.Min(c));
     System.out.println("Max of array equals: " +  TaskObject.Max(c));
+    //subtasks 6-7
+    TaskTwoHard.Execute();
   }
-  //subtask 6
 }
