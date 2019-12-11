@@ -1,10 +1,11 @@
 package java_hometasks;
 
-import java_hometasks.TaskTwo;
+import java_hometasks.TaskThree;
 //import java_hometasks.TaskOne;
+//import java_hometasks.TaskTwo;
 
 public class TaskMain {
   public static void main(String[] args) {
-    TaskTwo.Execute();
+    TaskThree.Execute();
   }
 }
