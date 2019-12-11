@@ -1,10 +1,11 @@
 package java_hometasks;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
-import java_hometasks.TaskThree;
+import java.util.Random;
+
 
 public class TaskThree {
+
   // Print words array in columns
   // return nothing
   public void printWords(String[] words, int n) {
@@ -25,17 +26,27 @@ public class TaskThree {
       field[i] = type;
     }
   }
+  //Get random word from arrya
+  //return char array of that word
+  private char[] randomWord(String [] words) {
+    return (words[(new Random().nextInt(words.length))]).toCharArray();
+  }
   // start game
   // return
   public void startGame(String[] words) {
     char[] mask = new char[15];
-    char[] word = {'l', 'e', 'm', 'o', 'n'};
-    char[] var = {'l', 'e', 'a', 'k'};
-    int N = mask.length;
-   
     createMask(mask, '*');
-    boolean result = true;
+    int N = mask.length;
+    //Get random word from array
+    char[] word = randomWord(words);
     if (N>word.length) N=word.length;
+    boolean result = false;
+  // while(result){
+     //Get variant
+    char[] var = {'l', 'e', 'a', 'k'};
+
+    result = true;
+    //
     if (N>var.length) N=var.length;
     for (int i = 0; i < N; i++) {
       if (word[i] != var[i]) {
@@ -44,12 +55,16 @@ public class TaskThree {
         mask[i] = word[i];
       }
     }
-    
+    //Show result
     System.out.println((mask));
+ // }
   }
+
+
   // Execute task three
   // return nothing
   public static void Execute() {
+ 
     TaskThree TaskObject = new TaskThree();
     // Game Words
 
@@ -84,4 +99,5 @@ public class TaskThree {
     TaskObject.printWords(words, 4);
     TaskObject.startGame(words);
   }
+ 
 }
