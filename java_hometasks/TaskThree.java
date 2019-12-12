@@ -2,7 +2,7 @@ package java_hometasks;
 
 import java.util.Arrays;
 import java.util.Random;
-
+import java.util.Scanner;
 
 public class TaskThree {
 
@@ -26,45 +26,68 @@ public class TaskThree {
       field[i] = type;
     }
   }
-  //Get random word from arrya
-  //return char array of that word
-  private char[] randomWord(String [] words) {
+  // Get random word from arrya
+  // return char array of that word
+  private char[] randomWord(String[] words) {
     return (words[(new Random().nextInt(words.length))]).toCharArray();
+  }
+  // Get word from console
+  // return char array of that word
+  private String consoleWord() {
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Input your variant:");
+    String s = (sc.nextLine());
+   //sc.close();
+    return s;
   }
   // start game
   // return
   public void startGame(String[] words) {
     char[] mask = new char[15];
     createMask(mask, '*');
-    int N = mask.length;
-    //Get random word from array
+    char[] var;
+    int N = 0;
+    // Get random word from array
     char[] word = randomWord(words);
-    if (N>word.length) N=word.length;
-    boolean result = false;
-  // while(result){
-     //Get variant
-    char[] var = {'l', 'e', 'a', 'k'};
+    N = mask.length;
+    if (N > word.length) N = word.length;
+    boolean result = true;
+    while (result) {
+      // Get variant
+      var = (consoleWord()).toCharArray();
+      // System.out.println(var);
+      // System.out.println(word);
+      result = false;
 
-    result = true;
-    //
-    if (N>var.length) N=var.length;
-    for (int i = 0; i < N; i++) {
-      if (word[i] != var[i]) {
-        result = false;
-      } else {
-        mask[i] = word[i];
+      for (int i = 0; i < N; i++) {
+        if (i >= var.length) {
+          result = true;
+          continue;
+        }
+        if (word[i] != var[i]) {
+          result = true;
+        } else {
+
+          mask[i] = word[i];
+        }
       }
-    }
-    //Show result
-    System.out.println((mask));
- // }
-  }
+      if (var.length > N) result = true;
+      // Show result
 
+      System.out.println((mask));
+      if (!result) {
+        System.out.println("You're win!!");
+      } else {
+        System.out.println("Try again");
+        createMask(mask, '#');
+      }
+    } // while
+  }
 
   // Execute task three
   // return nothing
   public static void Execute() {
- 
+
     TaskThree TaskObject = new TaskThree();
     // Game Words
 
@@ -99,5 +122,4 @@ public class TaskThree {
     TaskObject.printWords(words, 4);
     TaskObject.startGame(words);
   }
- 
 }
