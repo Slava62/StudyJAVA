@@ -1,4 +1,4 @@
-package com.geekbrains.lesson_4;
+package java_hometasks;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -106,7 +106,7 @@ public class Cross {
         return false;
     }
 
-    public static void main(String[] args) {
+    public static void Execute() {
         initField();
         printField();
 
