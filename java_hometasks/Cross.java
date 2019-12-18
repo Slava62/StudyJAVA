@@ -3,6 +3,7 @@ package java_hometasks;
 import java.util.Random;
 import java.util.Scanner;
 
+
 public class Cross {
 
     static final int SIZE=3;
