@@ -1,9 +1,9 @@
 package java_hometasks;
 
-
 public class TaskMain {
 
   public static void main(String[] args) {
+
    taskSix();
   }
   public static void taskSix(){
@@ -23,6 +23,7 @@ public class TaskMain {
       System.out.println(sharik.jump(1));
       System.out.println( sharik.swim(5));
       System.out.println(sharik.swim(500));
+
   }
 
 }
