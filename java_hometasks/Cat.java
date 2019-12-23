@@ -3,9 +3,12 @@ package java_hometasks;
 public class Cat {
 
     private Animal parent;
+    private IPlate plate;
 
     public Cat() {
         this.parent = new Animal();
+       
+       
     }
 
     public String run(double distance){
