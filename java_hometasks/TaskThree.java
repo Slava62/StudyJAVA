@@ -37,7 +37,9 @@ public class TaskThree {
     Scanner sc = new Scanner(System.in);
     System.out.println("Input your variant:");
     String s = (sc.nextLine());
-    sc.close();
+
+   //sc.close();
+
     return s;
   }
   // start game
