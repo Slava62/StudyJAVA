@@ -1,32 +1,45 @@
 package ExamTask.CircleGameDesktop;
 import java.awt.Color;
+import java.awt.Container;
+import java.awt.Graphics;
+
 import java.awt.GridBagLayout;
-import java.awt.event.ComponentAdapter;
-import java.awt.event.ComponentEvent;
-import java.awt.geom.RoundRectangle2D;
+
+import java.awt.Font;
 
 import javax.swing.JFrame;
-import javax.swing.JLabel;
+
 
 
 
 class ToastMessage extends JFrame {
-    public ToastMessage(final String message) {
+	
+
+	private String message;	
+
+    public ToastMessage(final String message,Container container) {
+    
+    	this.message=message;
         setUndecorated(true);
         setLayout(new GridBagLayout());
-        setBackground(new Color(240,240,240,250));
-        setLocationRelativeTo(null);
-        setSize(300, 50);
-        add(new JLabel(message));
-
-        addComponentListener(new ComponentAdapter() {
-            @Override
-            public void componentResized(ComponentEvent e) {
-                setShape(new  RoundRectangle2D.Double(0,0,getWidth(),
-                        getHeight(), 20, 20));
-            }
-        });
-    }
+        setBackground(new Color(0,0,0,0));
+        setLocationRelativeTo(container);;
+        setSize(120, 30);
+              
+     }  
+    @Override
+    public void paint(Graphics g) {
+    	g.setColor(Color.black);
+    	g.setFont(new Font("Arial", Font.PLAIN, 20));
+    	g.drawRoundRect(
+    			0,
+        	    0,
+        		getWidth()-5,
+                getHeight()-5, getHeight()/2, getHeight()/2);
+    	g.drawString(message, 10, 20); 
+        }
+   
+    
 
     public void display() {
         try {
