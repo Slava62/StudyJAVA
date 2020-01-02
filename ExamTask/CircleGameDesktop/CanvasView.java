@@ -19,7 +19,7 @@ public class CanvasView extends Canvas implements ICanvasView, MouseMotionListen
 
     @Override
     public void paint(Graphics g) {
-       graphics =  g;
+       graphics = g;
        graphics.setPaintMode();
        gameManager.onDraw();
     }
@@ -27,7 +27,9 @@ public class CanvasView extends Canvas implements ICanvasView, MouseMotionListen
     @Override
    public void drawCircle(SimpleCircle circle){
           graphics.setColor(circle.getColor());
-          graphics.fillOval(circle.getX(), circle.getY(), circle.getRadius(), circle.getRadius());
+          graphics.fillOval(circle.getX()-circle.getRadius(),
+                  circle.getY()-circle.getRadius(),
+                  circle.getRadius()*2, circle.getRadius()*2);
    }
 
     @Override

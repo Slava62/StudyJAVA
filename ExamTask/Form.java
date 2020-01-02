@@ -1,7 +1,8 @@
-package ExamTask;;
+package ExamTask;
 
 import ExamTask.CircleGameDesktop.CanvasView;
 import javax.swing.*;
+import java.awt.*;
 
 public class Form extends JFrame {
     private String title;
@@ -16,11 +17,12 @@ public class Form extends JFrame {
         this.title=title;
         setTitle(title);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        canvasView = new CanvasView(400,400);
-        add(canvasView);
-        pack();
+        setSize(new Dimension( 400,600));
+       // pack();
         setVisible(true);
-        canvasView.paint(canvasView.getGraphics());
+        canvasView = new CanvasView(getContentPane().getWidth(),getContentPane().getHeight());
+        add(canvasView);
+        //canvasView.paint(canvasView.getGraphics());
     }
 
 }
