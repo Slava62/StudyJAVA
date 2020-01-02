@@ -1,15 +1,20 @@
 package java_hometasks;
 
 
-        import ExamTask.Form;
+import javax.swing.SwingUtilities;
+import ExamTask.Form;
 
 public class TaskMain {
 
   public static void main(String[] args) {
 
-    Form myForm = new Form();
-
-
-
+	  SwingUtilities.invokeLater(new Runnable() {
+	         public void run() {
+	            createAndShowGui();
+	         }
+	      });
+  }
+  private static void createAndShowGui() {
+	  Form myForm = new Form();
   }
 }
