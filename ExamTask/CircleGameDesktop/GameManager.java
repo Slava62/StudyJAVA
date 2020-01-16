@@ -54,9 +54,11 @@ public class GameManager {
 
   public void onDraw() {
     canvasView.drawCircle(mainCircle);
+
     for (EnemyCircle circle : circles) {
       canvasView.drawCircle(circle);
     }
+
   }
 
   public void onTouchEvent(int x, int y) {
@@ -96,8 +98,8 @@ public class GameManager {
 
   private void gameEnd(String message) {
     canvasView.showMessage(message);
-    initMainCircle();
-   // mainCircle.initRadius();
+    //initMainCircle();
+    mainCircle.initRadius();
     initEnemyCircles();
     canvasView.redraw();
   }

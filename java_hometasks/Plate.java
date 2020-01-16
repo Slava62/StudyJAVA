@@ -1,5 +1,7 @@
 package java_hometasks;
 
+
+
 public class Plate implements IFoodProvider {
     private int foodQuantityInPlate;
     private int plateCapacity;
@@ -31,3 +33,4 @@ public class Plate implements IFoodProvider {
        return foodQuantityInPlate;
     }
 }
+
